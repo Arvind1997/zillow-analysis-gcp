@@ -1,0 +1,6 @@
+CREATE OR REPLACE TABLE `tokyo-hold-415100.zillow_dataset.zillow_analytics` AS (
+
+SELECT Id, propertyType, sale_ID, salerecdate, CAST(saleamt AS INT64) AS saleamt, fz.yearBuilt, pubDate, postal1, countrySubd, CAST(beds AS INT64) AS beds, bathstotal, CAST(priceperbed AS INT64) AS priceperbed, CAST(pricepersizeunit AS INT64) AS pricepersizeunit, universalSize, CAST(LotSizeinAcres AS NUMERIC) AS LotSizeinAcres, latitude, longitude
+
+FROM `tokyo-hold-415100.zillow_dataset.fact_zillow` fz JOIN `tokyo-hold-415100.zillow_dataset.dim_address` da USING(Address_ID)
+JOIN `tokyo-hold-415100.zillow_dataset.dim_summary` ds USING(Property_ID));
