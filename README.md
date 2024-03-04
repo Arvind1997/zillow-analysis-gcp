@@ -1,5 +1,8 @@
-# zillow-analysis-gcp
+# Zillow Sales Analysis
 This repository serves as the information for Zillow Property Sales analysis that starts from cleaning the dataset and storing it in Google Cloud Storage and the ETL process is performed using Mage and the Google Compute Engine while the analysis is done using Big Query and finally, the Visualzation is done using Looker Studio.
+
+![zillow-logo](https://github.com/Arvind1997/zillow-analysis-gcp/assets/13155343/0d5539ab-1291-4a2c-b72d-85d4744dc252)
+
 
 ## Overview:
 
@@ -16,10 +19,20 @@ Load the CSV file into Google Cloud Storage.
 Create a Google Compute instance and install necessary extensions (pip3, python3, etc.).
 Deploy a pipeline using Mage.
 
+![zillow-storage-bucket-screenshot](https://github.com/Arvind1997/zillow-analysis-gcp/assets/13155343/d29737e6-18ab-4f8d-b465-5e9a3bb005bd)
+
+
+![zillow-compute-instance-screenshot](https://github.com/Arvind1997/zillow-analysis-gcp/assets/13155343/c7dabe9e-dec9-4bcb-893a-21d7ac596ec4)
+
+
 ## Pipeline Steps
 
 1. Start Mage:
 mage start <pipeline name>
+
+![ssh-magestart-screenshot](https://github.com/Arvind1997/zillow-analysis-gcp/assets/13155343/7b2716a3-68f2-4569-9f05-40e1dd5c60f6)
+
+![mage-ETL-screenshot](https://github.com/Arvind1997/zillow-analysis-gcp/assets/13155343/01d3ea37-6bd4-45b7-99a9-62539dd0f82b)
 
 3. Data Loading:
 Create a data loader to connect with the data in Google Storage.
@@ -27,16 +40,23 @@ Create a data loader to connect with the data in Google Storage.
 4. Transformation:
 Use the transform stage to create necessary dimension and fact tables. Send the transformed data to the exporter as a dictionary.
 
-5. Data Export:
+6. Data Export:
 The data exporter exports the transformed data to BigQuery.
 
-6. BigQuery Validation:
+![zillow-mage-pipeline-screenshot](https://github.com/Arvind1997/zillow-analysis-gcp/assets/13155343/545a244f-6c55-447e-a7a7-0dc740b1f7c3)
+
+![mage-bigquery-connect-screenshot](https://github.com/Arvind1997/zillow-analysis-gcp/assets/13155343/39875a71-a4ad-44e0-b672-c92de5360ec7)
+
+7. BigQuery Validation:
 Perform table validations in BigQuery.
 
-7. Analytics Table:
+![zillow-bigquery-tables-screenshot](https://github.com/Arvind1997/zillow-analysis-gcp/assets/13155343/2ad343f3-0c11-4a85-a4ad-7c942d55d5aa)
+
+
+8. Analytics Table:
 Create the analytics table named 'zillow-analytics' for further analysis.
 
-8. Looker Visualization:
+9. Looker Visualization:
 Utilize Looker for visualization and analysis.
 
 ## Looker Visualization
